@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1">
+<title>Lumenfold – Daily planner that automates the boring parts</title>
+<meta name="description"
+  content="Lumenfold is a daily planner with built-in automations
+  and a helper chat. Plan tasks, set reminders and let routine
+  work run itself. Free to start.">
+<link rel="canonical" href="https://YOUR-SITE.onrender.com/">
+<meta property="og:title"
+  content="Lumenfold – Plan the day, automate the rest">
+<meta property="og:description"
+  content="Tasks, automations and a helper chat in one calm workspace.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E5E6F">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Lumenfold",
+  "applicationCategory": "ProductivityApplication",
+  "offers": { "@type": "Offer", "price": "0",
+    "priceCurrency": "USD" }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;600&display=swap"
+  rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bar"></div>
+
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#home">Lumenfold</a>
+    <button id="burger" aria-label="Menu"
+      aria-expanded="false">Menu</button>
+    <div class="links" id="links">
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle theme">Theme</button>
+      <button class="p" id="auth">Sign in</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="wrap hero">
+    <div>
+      <h1>Plan the day. Let the routine run itself.</h1>
+      <p>Lumenfold keeps your tasks, reminders and repeat chores
+        in one calm place, and handles the follow-ups for you.</p>
+      <div class="cta">
+        <button class="p" onclick="openAuth()">Start free</button>
+        <button onclick="location.hash='features'">
+          See how it works</button>
+      </div>
+    </div>
+    <div class="demo" aria-label="Live demo">
+      <strong>Try it: tick a task</strong>
+      <div id="demoList"></div>
+      <div class="fire" id="fire" aria-live="polite">
+        Nothing triggered yet.</div>
+    </div>
+  </section>
+
+  <section id="features" class="wrap reveal">
+    <h2>Everything a day needs</h2>
+    <div class="grid">
+      <div class="card"><h3>Smart tasks</h3>
+        <p>Add, tick and delete tasks. They are saved to your
+          account.</p></div>
+      <div class="card"><h3>Automations</h3>
+        <p>Finish your tasks and Lumenfold sends the recap for
+          you.</p></div>
+      <div class="card"><h3>Helper chat</h3>
+        <p>Ask the chatbot to add a task or explain a plan.</p></div>
+      <div class="card"><h3>Any screen</h3>
+        <p>Phone, tablet or desktop, in light and dark themes.</p></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="wrap reveal">
+    <h2>Pricing</h2>
+    <div class="grid">
+      <div class="card"><h3>Free</h3><div class="big">$0</div>
+        <p>50 tasks, 3 automations, helper chat.</p></div>
+      <div class="card hot"><h3>Pro</h3>
+        <div class="big">$6<small>/mo</small></div>
+        <p>Unlimited tasks and automations.</p></div>
+      <div class="card"><h3>Team</h3>
+        <div class="big">$12<small>/user</small></div>
+        <p>Shared boards, roles and activity log.</p></div>
+    </div>
+  </section>
+
+  <section id="dashboard" class="wrap reveal">
+    <h2>Your dashboard</h2>
+    <div class="dash" id="dashBody"></div>
+  </section>
+
+  <section id="contact" class="wrap reveal">
+    <h2>Contact</h2>
+    <form id="cf" class="row">
+      <input type="email" id="ce" placeholder="Your email"
+        required aria-label="Email">
+      <input type="text" id="cm" placeholder="Message"
+        required aria-label="Message">
+      <button class="p">Send message</button>
+    </form>
+    <div id="cstat" aria-live="polite"></div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Lumenfold.</div></footer>
+
+<dialog id="dlg">
+  <form id="af">
+    <h3>Sign in</h3>
+    <input type="email" id="ae" placeholder="Email" required
+      aria-label="Email">
+    <input type="password" id="ap" placeholder="Password (min 6)"
+      minlength="6" required aria-label="Password">
+    <p id="aerr" role="alert"></p>
+    <button class="p">Sign in</button>
+    <button type="button" id="su">Create account</button>
+    <button type="button" onclick="dlg.close()">Cancel</button>
+  </form>
+</dialog>
+
+<button id="chatBtn">Chat</button>
+<div id="chat" role="dialog" aria-label="Helper chat">
+  <div id="msgs"></div>
+  <form id="cform" class="row chatrow">
+    <input type="text" id="cin" placeholder="Ask me anything"
+      aria-label="Message">
+    <button class="p">Send</button>
+  </form>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
