@@ -1,0 +1,29 @@
+{
+	"name": "lumenfold",
+	"main": "src/index.js",
+	"compatibility_date": "2025-09-01",
+	"assets": {
+		"directory": "./public",
+		"run_worker_first": [
+			"/api/*"
+		]
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "lumenfold-db",
+			"database_id": "ca273edf-dcd5-44be-a0d7-a9c78a9d745b"
+		}
+	],
+	"triggers": {
+		"crons": [
+			"0 4 * * *"
+		]
+	},
+	"vars": {
+		"CLAUDE_MODEL": "claude-sonnet-5-5"
+	},
+	"observability": {
+		"enabled": true
+	}
+}
